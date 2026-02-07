@@ -1,22 +1,28 @@
 package com.String;
 
 public class RemoveDuplicate {
-      public static void main(String[] args) {
-		String s= " MALAYALAM";
-		
-		char ch[]=s.toCharArray();
-	 
-	 char[] s1;
-	 for (int i=0;i<ch.length;i++) {
-	     for (int j=i+1;j<ch.length;j++) {
-	    	 if (ch[i]==ch[j]) {
-	    		  ch[j]=' ';
-	    	 }
-	     }
-	     if(ch[i]!=' ') {
-	   	 s1=s1+ch[i]; 
-	    	 }
-	      }
-	 System.out.println(s1);
-	}
+    public static void main(String[] args) {
+
+        String s = "MALAYALAM";
+
+        char[] ch = s.toCharArray();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < ch.length; i++) {
+            boolean isDuplicate = false;
+
+            for (int j = 0; j < i; j++) {
+                if (ch[i] == ch[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!isDuplicate) {
+                result.append(ch[i]);
+            }
+        }
+
+        System.out.println(result.toString());
+    }
 }
