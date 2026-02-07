@@ -11,7 +11,7 @@ public class TC_MavenParameter_Test
 { 
 	@Test
 	
-     public void mavenParameter()
+     public void mavenParameter() throws InterruptedException
      {
     	 WebDriver driver = new ChromeDriver();
     	 driver.manage().window().maximize();
@@ -21,7 +21,8 @@ public class TC_MavenParameter_Test
     	 
     	String data = System.getProperty("data");
     	 driver.findElement(By.name("q")).sendKeys(data);
-    	  
+    	 Thread.sleep(1000);  
+    	 driver.quit();
      }
     
      
